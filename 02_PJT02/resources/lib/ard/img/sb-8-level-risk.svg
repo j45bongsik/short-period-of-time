@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="41" height="40.999" viewBox="0 0 41 40.999">
+    <g data-name="그룹 2275">
+        <g data-name="그룹 2263">
+            <path data-name="패스 170" d="M548.227 257.082a20 20 0 1 0 20 20 20 20 0 0 0-20-20zm0 38.4a18.4 18.4 0 1 1 18.4-18.4 18.4 18.4 0 0 1-18.4 18.4z" transform="translate(-527.727 -256.582)" style="fill:#6b3c8f;stroke:#6b3c8f"/>
+            <path data-name="패스 171" d="M571.8 349.088a.825.825 0 0 0 .184-.023.868.868 0 0 0 .193.023h13.393a.865.865 0 0 0 .192-.023.825.825 0 0 0 .184.023.836.836 0 0 0 .83-.953c-.518-3.512-3.858-6.221-7.9-6.221s-7.384 2.71-7.9 6.221a.836.836 0 0 0 .824.953zm7.072-5.667a6.27 6.27 0 0 1 5.988 3.914h-11.975a6.27 6.27 0 0 1 5.989-3.914z" transform="translate(-558.374 -317.454)" style="fill:#6b3c8f;stroke:#6b3c8f"/>
+            <g data-name="그룹 418" transform="translate(9.87 14.863)">
+                <rect data-name="사각형 236" width="5.332" height="1.754" rx=".877" transform="translate(0 2.894)" style="fill:#6b3c8f;stroke:#6b3c8f"/>
+                <rect data-name="사각형 237" width="5.332" height="1.754" rx=".877" transform="translate(16.268 2.894)" style="fill:#6b3c8f;stroke:#6b3c8f"/>
+                <rect data-name="사각형 238" width="5.332" height="1.754" rx=".877" transform="rotate(-45 12.504 -17.314)" style="fill:#6b3c8f;stroke:#6b3c8f"/>
+                <rect data-name="사각형 239" width="5.332" height="1.754" rx=".877" transform="rotate(-135 3.266 1.583)" style="fill:#6b3c8f;stroke:#6b3c8f"/>
+            </g>
+        </g>
+    </g>
+</svg>

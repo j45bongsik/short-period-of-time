@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16">
+    <defs>
+        <clipPath id="clip-path">
+            <path id="Color" d="M3.2 6.549a.546.546 0 0 1-.4-.172L.148 3.551a.546.546 0 0 1 .8-.747L3.194 5.2 7.783.178a.546.546 0 1 1 .806.736L3.6 6.371a.545.545 0 0 1-.4.178z"/>
+        </clipPath>
+        <style>
+            
+        </style>
+    </defs>
+    <g id="그룹_1312" data-name="그룹 1312" transform="translate(-41 -818)">
+        <g id="Elements_Checkmark" data-name="Elements / Checkmark" transform="translate(40.628 818)">
+            <g id="Activ">
+                <rect id="Rectangle" width="16" height="16" rx="8" transform="translate(.372)" style="fill:#00bcd4"/>
+            </g>
+            <g id="Icons_Checkmark_Checkmark" data-name="Icons / Checkmark / Checkmark" transform="translate(3.82 4.912)">
+                <g id="그룹_116" data-name="그룹 116">
+                    <path id="Color-2" data-name="Color" d="M3.2 6.549a.546.546 0 0 1-.4-.172L.148 3.551a.546.546 0 0 1 .8-.747L3.194 5.2 7.783.178a.546.546 0 1 1 .806.736L3.6 6.371a.545.545 0 0 1-.4.178z" style="fill:#fff"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

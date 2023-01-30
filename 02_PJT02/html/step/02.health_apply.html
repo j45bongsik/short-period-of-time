@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+    <title>현대이지웰 내 몸 관리</title>
+    <link rel="stylesheet" href="../../resources/css/common.css">
+</head>
+<body>
+    <div class="wrap" id="wrap">
+        <h1 class="blind">현대이지웰 내 몸 관리</h1>
+        <main class="contents" id="contents">
+            
+            <!-- page-head -->
+            <section class="page-head active">
+                <article class="btn-area">
+                    <button type="button" class="btn page-prev" title="뒤로가기"></button>
+                </article>
+                
+                <article class="title-area">
+                    <h2 class="head-title">룰루메딕 건강분석 신청</h2>
+                </article>
+
+            </section>
+            <!-- //page-head -->
+
+            <!-- page-cont -->
+            <section class="page-cont">
+
+                <article class="user-area">
+                    <div class="user">
+                        <p>
+                            <span class="name">김지웰</span> 님,<br />
+                            <strong>건강분석</strong>을 시작해보세요
+                        </p>
+                    </div>
+                    <div class="input-area phone">
+                        <label for="l01">휴대폰 번호</label>
+                        <input type="text" readonly value="010-0000-1234">
+                    </div>
+                    <div class="input-area date">
+                        <label for="l02">생년월일</label>
+                        <input type="text" readonly value="1986.05.14">
+                    </div>
+                </article>
+                
+            </section>
+            <!-- //page-cont -->
+
+            <!-- page-foot -->
+            <section class="page-foot">
+                <article class="e-check_range">
+                    <div class="f-chk all">
+                        <input type="checkbox" id="termAgreeAllCheckbox" class="all-check">
+                        <label for="termAgreeAllCheckbox">약관 동의하기</label>
+                    </div>
+                    <ul class="list">
+                        <li class="f-chk">
+                            <input type="checkbox" required id="termAgreeCheckbox1">
+                            <label for="termAgreeCheckbox1">
+                                [필수] 서비스 이용약관
+                                <a href="#" title="서비스 이용약관 보기">보기</a>
+                            </label>
+                        </li>
+                        <li class="f-chk">
+                            <input type="checkbox" required id="termAgreeCheckbox2">
+                            <label for="termAgreeCheckbox2">
+                                [필수] 개인정보 처리방침
+                                <a href="#" title="개인정보 처리방침 보기">보기</a>
+                            </label>
+                        </li>
+                        <li class="f-chk">
+                            <input type="checkbox" required id="termAgreeCheckbox3">
+                            <label for="termAgreeCheckbox3">
+                                [필수] 개인정보 제3자 제공동의
+                                <a href="#" title="개인정보 제3자 제공동의 보기">보기</a>
+                            </label>
+                        </li>
+                    </ul>
+                    <article class="btn-area">
+                        <!-- 조건 충족시 disabled 삭제 -->
+                        <button type="button" class="btn yellow-rect disabled">
+                            동의하고 건강분석하기
+                        </button>
+                    </article>
+                </article>
+            </section>
+            <!-- //page-foot -->
+            
+        </main>
+    </div>
+
+    <script src="../../resources/js/ui.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        });
+
+    </script>
+</body>
+</html>

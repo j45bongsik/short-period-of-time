@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+    <title>현대이지웰 내 몸 관리</title>
+    <link rel="stylesheet" href="../../resources/css/common.css">
+</head>
+<body>
+    <div class="wrap" id="wrap">
+        <h1 class="blind">현대이지웰 내 몸 관리</h1>
+        <main class="contents" id="contents">
+            
+            <!-- page-head -->
+            <section class="page-head active">
+                <article class="btn-area">
+                    <button type="button" class="btn page-prev" title="뒤로가기"></button>
+                </article>
+                
+                <article class="title-area">
+                    <h2 class="head-title">인증 방법 선택</h2>
+                </article>
+
+            </section>
+            <!-- //page-head -->
+
+            <!-- page-cont -->
+            <section class="page-cont">
+
+                <article class="certi-area">
+                    <h3 class="area-title">간편인증 방법을 선택해 주세요</h3>
+                    
+                    <ul>
+                        <li class="active">
+                            <button type="button" class="btn certi kakao">
+                                <span>카카오톡</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="btn certi kb">
+                                <span>KB모바일</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="btn certi payco">
+                                <span>페이코</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="btn certi pass">
+                                <span>통신사 PASS</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="btn certi samsung">
+                                <span>삼성 PASS</span>
+                            </button>
+                        </li>
+
+                    </ul>
+
+                </article>
+
+            </section>
+            <!-- //page-cont -->
+
+            <!-- show 클래스 추가 시 pouup호출 -->
+            <section class="popup-layer">
+                <div class="inner">
+                    <h3 class="pop-title">간편인증 정보 확인 불가</h3>
+                    <p class="desc">
+                        간편인증 앱 설치, 인증서 발급(재발급), 간편인증 사용자 정보(이름, 전화번호, 주민등록번호)를 확인 후 다시 요청해 주세요.
+                    </p>
+                    <article class="btn-area">
+                        <button type="button" class="btn yellow-rect">
+                            확인
+                        </button>
+                    </article>
+                </div>
+                <div class="dimm"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="../../resources/js/ui.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const certifyList = document.querySelectorAll('.certi-area button');
+
+            [].map.call(certifyList, el => {
+                el.addEventListener('click', (e) => {
+                    [].map.call(certifyList, item => {
+                        item.closest('li').classList.remove('active');
+                    });
+                    e.target.closest('li').classList.add('active');
+                });
+            });
+
+            document.querySelectorAll('.dimm').forEach(function(dimm) {
+                dimm.addEventListener('click', function() {
+                    this.parentNode.classList.remove('show');
+                });
+            });
+
+        });
+
+    </script>
+</body>
+</html>

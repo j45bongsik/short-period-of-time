@@ -1,0 +1,17 @@
+html {
+    @include min-height100;
+    box-sizing: border-box;
+}
+body {
+    @include min-height100;
+    box-sizing: border-box;
+}
+.wrap {
+    @include min-height100;
+    padding-bottom: safe(bottom);
+    box-sizing: border-box;
+}
+.contents {
+    min-height: 100%;
+    box-sizing: border-box;
+}

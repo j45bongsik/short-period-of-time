@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="61.216" height="46.181">
+    <defs>
+        <style>
+            .cls-2{fill:none;stroke:#222;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.5px}
+        </style>
+    </defs>
+    <g id="kidney" transform="translate(1.25 1.25)" style="opacity:.05">
+        <path id="패스_921" data-name="패스 921" class="cls-2" d="M30.61 329.6c.034-.064.443-.74.566-.916a8.732 8.732 0 0 1 14.617 9.545h0a11.047 11.047 0 0 0-1.575 4.9 10.859 10.859 0 0 0 1.175 5.84h-.01a7.909 7.909 0 0 1-13.459 8.2l-.324-.477a25.685 25.685 0 0 1-.991-27.1z" transform="translate(-27.22 -324.934)"/>
+        <path id="패스_922" data-name="패스 922" class="cls-2" d="M83.742 329.6c-.034-.064-.443-.74-.566-.916a8.732 8.732 0 0 0-14.617 9.545h0a11.046 11.046 0 0 1 1.575 4.9 10.859 10.859 0 0 1-1.175 5.84h.01a7.909 7.909 0 0 0 13.459 8.2l.324-.477a25.684 25.684 0 0 0 .991-27.1z" transform="translate(-28.416 -324.934)"/>
+        <path id="패스_923" data-name="패스 923" class="cls-2" d="M69.974 343.689h0a8.051 8.051 0 0 0-8.05 8.05h0" transform="translate(-28.257 -325.494)"/>
+        <path id="선_70" data-name="선 70" class="cls-2" transform="translate(33.667 26.246)" d="M0 0v17.435"/>
+        <path id="패스_924" data-name="패스 924" class="cls-2" d="M44.741 343.689h0a8.051 8.051 0 0 1 8.05 8.05h0" transform="translate(-27.744 -325.494)"/>
+        <path id="선_71" data-name="선 71" class="cls-2" transform="translate(25.048 26.246)" d="M0 0v17.435"/>
+    </g>
+</svg>

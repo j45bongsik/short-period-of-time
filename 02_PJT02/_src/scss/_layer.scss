@@ -1,0 +1,122 @@
+.dimmed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    height: 100vh;
+    background: rgba($color-gray-100, 0.4);
+
+    &.none-event {
+        pointer-events: none;
+    }
+}
+
+.page-head {
+    display: flex; justify-content: center; align-items: center;
+    width: 100%;
+    min-height: 50px;
+    max-height: 50px;
+    padding: 20px 20px;
+    box-sizing: border-box;
+    background: #fff;
+    .btn-area {
+        display: none;
+        margin-left: 0;
+    }
+    .title-area {
+        display: none;
+        margin-left: auto;
+        margin-right: auto;
+        .head-title {
+            margin-left: -24px;
+        }
+    }
+    &.active {
+        .btn-area {
+            display: block;
+        }
+        .title-area {
+            display: block;
+        }
+    }
+}
+.page-cont {
+    position: relative;
+    width: 100%;
+}
+
+.page-foot {
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: 0;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: calc(20px + env(safe-area-inset-bottom));
+    background: #fff;
+    box-sizing: border-box;
+    .e-check_range {
+        margin-top: 30px;
+        .f-chk {}
+        .list {
+            margin-top: 30px;
+            li {
+                label {
+                    display: flex; justify-content: space-between;
+                    a {
+                        @include font-size(14);
+                        font-weight: 500;
+                        color: #b1b1b1;
+                        text-decoration: underline;
+                    }
+                }
+                &:not(:first-child) {
+                    margin-top: 26px;
+                }
+            }
+        }
+        .btn-area {
+            margin-top: 40px;
+        }
+        &.type02 {
+            .f-chk {}
+            .agree-group {
+                display: flex; justify-content: space-between; align-items: center;
+                margin-top: 22px; padding: 0px 5px;
+                @include font-size(14);
+                h4 {
+                    font-weight: 600;
+                    color: #222;
+                }
+                a {
+                    font-weight: 500;
+                    color: #b1b1b1;
+                    text-decoration: underline;
+                }
+            }
+            .list {
+                margin-top: 7px;
+                li {
+                    label {
+                        display: flex; justify-content: space-between;
+                        a {
+                            @include font-size(14);
+                            font-weight: 500;
+                            color: #b1b1b1;
+                            text-decoration: underline;
+                        }
+                    }
+                    &:not(:first-child) {
+                        margin-top: 5px;
+                    }
+                }
+            }
+            .btn-area {
+                margin-top: 20px;
+            }
+        }
+    }
+}

@@ -1,0 +1,70 @@
+
+$loading-animation-duration: 1.5s;
+
+@keyframes LOADING-SHIMMER {
+    0% {
+        background-position: calc(-100% - 600px) 0;
+    }
+    100% {
+        background-position: calc(100% + 600px) 0;
+    }
+}
+
+@mixin loading-animator($color: black, $opacity: 0.06) {
+    background-image:
+        linear-gradient(
+            to right,
+            rgba($color, 0) 0%,
+            rgba($color, $opacity) 50%,
+            rgba($color, 0) 100%
+        );
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    animation: LOADING-SHIMMER $loading-animation-duration infinite ease-in-out;
+}
+
+@mixin skeleton-text($font-size, $line-height, $color) {
+    height: $line-height;
+
+    &::before {
+        height: $font-size;
+        background-color: $color;
+        border-radius: calc($font-size / 2);
+    }
+}
+
+// 진료 요청 > 의사 목록
+.doctor-list {
+    .before {
+        .image, .name, .hospital, .hash, .description {
+            position: relative;
+            &::before {
+                @include loading-animator;
+                content: "";
+                display: block;
+                position: absolute;
+                top: 50%;
+                width: 100%;
+                transform: translateY(-50%);
+            }
+        }
+        .image {
+            @include skeleton-text(36px, 36px, rgba(#000, 0.13));
+        }
+        .name {
+            width: 40%;
+            @include skeleton-text(16px, 24px, rgba(#000, 0.13));
+        }
+        .hospital {
+            width: 50%;
+            @include skeleton-text(11px, 24px, rgba(#000, 0.08));
+        }
+        .hash {
+            @include skeleton-text(12px, 24px, rgba(#000, 0.1));
+        }
+        .description {
+            @include skeleton-text(12px, 24px, rgba(#000, 0.1));
+        }
+    }
+}

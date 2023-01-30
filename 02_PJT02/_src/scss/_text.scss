@@ -1,0 +1,53 @@
+
+.head-title {
+    @include font-size(18);
+    font-weight: 600;
+    color: #222;
+}
+.desc-title {
+    display: inline-block;
+    height: 26px;
+    line-height: 26px;
+    padding: 0px 16px;
+    @include font-size(14);
+    font-weight: 500;
+    color: #222;
+    background: #e0e0e0;
+    border-radius: 200px;
+}
+.info-title {
+    @include font-size(12);
+    font-weight: 600;
+    color: #777;
+    line-height: 18px;
+    letter-spacing: -0.25px;
+}
+.area-title {
+    @include font-size(20);
+    font-weight: 600;
+    color: #222;
+    line-height: 24px;
+    &.type02 {
+        @include font-size(24);
+        font-weight: 700;
+        line-height: 32px;
+        text-align: center;
+    }
+}
+.pop-title {
+    @include font-size(20);
+    font-weight: 700;
+    color: #222;
+}
+.data-title {
+    @include font-size(21);
+    font-weight: 600;
+    color: #222;
+    line-height: 21px;
+}
+.agree-title {
+    @include font-size(22);
+    font-weight: 600;
+    color: #222;
+
+}

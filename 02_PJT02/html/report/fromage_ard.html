@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+    <title>현대이지웰 내 몸 관리</title>
+    <!-- <link rel="stylesheet" href="../../resources/css/common.css"> -->
+
+    <script defer="defer" src="../../resources/lib/ard/js/main.js"></script>
+    <link href="../../resources/lib/ard/css/main.css" rel="stylesheet">
+    
+    <style>
+        @font-face {
+            font-family: "Pretendard";
+            font-style: normal;
+            font-weight: 600;
+            src:
+                url("../../resources/fonts/Pretendard-SemiBold.woff2") format("woff2"),
+                url("../../resources/fonts/Pretendard-SemiBold.woff") format("woff"),
+                url("../../resources/fonts/Pretendard-SemiBold.ttf") format("truetype");
+        }
+        :root {
+            --font-device: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Helvetica Neue", "Malgun Gothic","맑은 고딕", Arial, sans-serif;
+            --font-default: "Pretendard", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Helvetica Neue", "Malgun Gothic","맑은 고딕", Arial, sans-serif;
+        }
+        
+        @media screen and (max-width: 319px) {
+            html, body {
+                font-size: 12px;
+            }
+        }
+        @media screen and (min-width: 320px) and (max-width: 360px) {
+            html, body {
+                font-size: 13px;
+            }
+        }
+        @media screen and (min-width: 361px) {
+            html, body {
+                font-size: 14px;
+            }
+        }
+
+        html, body, input, a, button {
+            color: var(--color-gray-100);
+        }
+
+        #app .container .header {top: 50px;}
+        #app .container .header.bio-age-analysis {top: 110px;}
+        #app .container.biologic .main {margin-top: 110px;}
+        #app .container.disease .main {margin-top: 110px;}
+        #app .home .main {margin-top: 235px;}
+        .blind {
+            overflow: hidden; 
+            position: absolute; 
+            clip: rect(0 0 0 0); 
+            margin: -1px; 
+            width: 1px; 
+            height: 1px; 
+            color: transparent;
+        }
+        .page-head {
+            position: fixed;
+            width: 100%;
+            top: 0; left: 0;
+            min-height: 50px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+            padding: 0px 20px;
+        }
+        .page-head .btn-area {
+            display: none;
+            margin-left: 0;
+        }
+        .page-head .title-area {
+            display: none;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .page-head.active .btn-area {
+            display: block;
+        }
+        .page-head.active .title-area {
+            display: block;
+        }
+        .btn.page-prev {
+            width: 24px;
+            height: 24px;
+            background: url("../../resources/images/ico_page_prev.svg") no-repeat center left;
+        }
+        .head-title {
+            margin: 0;
+            margin-left: -24px;
+            font-family: var(--font-default);
+            font-size: 18px;
+            font-size: calc(18rem / 14);
+            font-weight: 600;
+            color: #222;
+            white-space: nowrap;
+        }
+
+        .container {
+            position: relative;
+            z-index: 99;
+        }
+        .home .header+.header.bio-age-analysis {
+            height: auto;
+            min-height: 200px;
+        }
+        .container .main {
+            z-index: 100;
+        }
+        .instruction-note {
+            position: relative;
+            z-index: 100;
+        }
+
+        @media screen and (max-width: 320px) { 
+            .container {
+                min-width: 100%;
+            }
+            .bio-age-analysis .analysis-box {
+                padding: 0px 20px;
+            }
+            .bio-age-analysis .analysis-box dt {
+                font-size: 12px;
+            }
+            .bio-age-analysis .analysis-box dd {
+                font-size: 28px;
+            }
+            .bio-age-analysis .analysis-box dd .text-unit {
+                font-size: 12px;
+            }
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <div class="wrap" id="wrap">
+        <h1 class="blind">현대이지웰 내 몸 관리</h1>
+        <main class="contents sub" id="contents">
+            <!-- page-head -->
+            <section class="page-head active">
+                <article class="btn-area">
+                    <button type="button" class="btn page-prev" title="뒤로가기"></button>
+                </article>
+                
+                <article class="title-area">
+                    <h2 class="head-title">룰루메딕 건강분석</h2>
+                </article>
+
+            </section>
+            <!-- //page-head -->
+            
+        </main>
+    </div>
+
+    <div id="app"></div>
+    <script defer src="../../resources/lib/ard/sample/common.js"></script>
+    <script defer src="../../resources/lib/ard/sample/default.js"></script>
+    <script>
+        let apiType;
+        let userKey;
+    
+        document.addEventListener("DOMContentLoaded", () => {
+            // 샘플 script 파일은 [./sample/*.js]를 참고 하세요
+            initAsync()
+            .then(() => {
+                init();
+                run();
+            });
+        });
+    
+        function init() {
+            apiType = model.apiType;
+            userKey = model.userKey;
+        }
+    
+        function run() {
+            const options = {
+                endpointApi: {
+                    apiType: apiType,
+                    userKey: userKey,
+                },
+                params: {
+                    viewPdf(data) {
+                        const pdfResult = data?.data?.[0];
+                        if (pdfResult.file_path) {
+                            location.href = pdfResult.file_path;
+                        } else {
+                            wv.alert("pdf", pdfResult.message);
+                        }
+                    },
+                },
+            };
+            window.wv = new Mediage.WebView("#app", options);
+            // wv.alert("TEST", "<i style='font-size: 20px;'>웹뷰 테스트</i>");
+        }
+    </script>
+
+</body>
+</html>

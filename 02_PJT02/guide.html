@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">   MO -->
+    <meta name="robots" content="index,nofollow"> 
+    <meta name="description" content=""> 
+    <meta property="og:title" content=""> 
+    <meta property="og:url" content=""> 
+    <meta property="og:image" content=""> 
+    <meta property="og:description" content="">
+    <link rel="shortcut icon" type="image/x-icon" href="./../resources/images/favicon.ico">
+    <link rel="stylesheet" href="./resources/css/common.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <script src="./resources/js/jquery-3.6.0.min.js"></script> -->
+
+    <!-- Guide 용 -->
+    <link rel="stylesheet" href="./_src/scss/guide.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/vs2015.min.css">
+    <script src="//cdn.jsdelivr.net/highlight.js/9.5.0/highlight.min.js"></script>   <!-- ui 가이드용 js -->
+    <script>hljs.initHighlightingOnLoad();</script>
+    <title></title>
+  </head>
+  <body>
+    <div class="g-wrap" id="wrap">
+        <header class="g-header" id="header">
+            <h1 class="logo">UI</h1>
+            <nav class="g-gnb">
+                <ul>
+                    <li><a href="./index.html">IA</a></li>
+                    <li class="active"><a href="javascript:;">UI Guide</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="g-container">
+            <aside class="g-aside">
+                <nav>
+                    <ul class="" id="menu">
+                        <!-- <li class="active">
+                            <a href="javascript:;">nav1</a>
+                            <button type="button" class="btn-icon e-nav" title="하위메뉴 보기"><i class="fas fa-angle-down"></i></button>
+                            <ul>
+                                <li><a href="javascript:;">nav1</a></li>
+                                <li class="active"><a href="javascript:;">nav2</a></li>
+                                <li><a href="javascript:;">nav3</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="javascript:;">nav2</a></li>
+                        <li><a href="javascript:;">nav3</a></li> -->
+                    </ul>
+                </nav>
+            </aside>
+
+
+            <!-- <section class="g-section" id="">
+                <h3 class="section-title"></h3>
+
+                <div class="g-table">
+                    <table>
+                        <colgroup>
+                            <col style="width:150px;">
+                            <col style="width:300px;">
+                            <col style="width:auto;">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row"></th>
+                                <td></td>
+                                <td>
+                                    <div class="g-card active">
+                                        <pre><code class="html"></code></pre>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section> -->
+
+            <main class="g-contents" id="contents">
+                <h2 class="g-page-title">UI Template</h2>
+
+                <section class="g-section" id="common">
+                    <header class="g-section-header">
+                        <h3 class="section-title">Common</h3>
+                    </header>
+
+                    <div class="g-table">
+                        <table>
+                            <colgroup>
+                                <col style="width:150px;">
+                                <col style="width:300px;">
+                                <col style="width:auto;">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">INFO</th>
+                                    <td colspan="2">
+                                        기존 작성되어 있던 LMC(룰루메딕 환자용) <br />scss(convention, reset, mixin 등) 활용하여 작업<br />
+                                    </td>
+                                    <!-- <td></td> -->
+                                </tr>
+                                <tr>
+                                    <th scope="row">지원<br />(LMC 기존 내용)</th>
+                                    <td>
+                                        <ul>
+                                            <li>- AOS 6.0 이상</li>
+                                            <li>- iOS 12 이상</li>
+                                        </ul>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Font</th>
+                                    <td>Pretendard<br>
+                                        <div class="text-info">- Regular(400), Medium(500), SemiBold(600), Bold(700) </div><br />
+                                        GmarketSans                                        
+                                    </td>
+                                    <td>
+                                        <a href="https://cactus.tistory.com/306" target="_blank" class="text-link">https://cactus.tistory.com/306</a><br>
+                                        <a href="https://github.com/orioncactus/pretendard" target="_blank" class="text-link">https://github.com/orioncactus/pretendard</a>
+                                        <a href="https://github.com/orioncactus/pretendard" target="_blank" class="text-link">https://github.com/orioncactus/pretendard</a><br /><br />
+                                        <a href="https://corp.gmarket.com/fonts/" target="_blank" class="text-link">https://corp.gmarket.com/fonts/</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">focus, active<br />(LMC 기존 내용)</th>
+                                    <td></td>
+                                    <td>
+                                        <div class="g-card active">
+                                            <pre><code class="css">button, a {
+    &:focus-visible {
+        outline-color: var(--color-yellow-100);
+        outline-offset: -1px;
+        outline-style: dotted;
+        outline-width: 1px;
+    }
+    &:focus:not(:focus-visible) {
+        outline: none;
+    }
+    &:active {
+        outline: none;
+        -webkit-tap-highlight-color: transparent;
+    }
+}</code></pre>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section class="g-section" id="mixin">
+                    <header class="g-section-header">
+                        <h3 class="section-title">Mixin / Root<br />(LMC 기존 내용)</h3>
+                    </header>
+
+                    <div class="g-table">
+                        <table>
+                            <colgroup>
+                                <col style="width:150px;">
+                                <col style="width:300px;">
+                                <col style="width:auto;">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Color</th>
+                                    <td>
+                                        <ul class="g-list">
+                                            <li>* 기본 컬러값</li>
+                                            <li style="background:var(--color-yellow-100)">--color-yellow-100</li>
+                                            <li style="background:var(--color-yellow-200)">--color-yellow-200</li>
+                                            <li style="background:var(--color-yellow-300)">--color-yellow-300</li>
+                                            <li style="background:var(--color-green-100)">--color-green-100</li>
+                                            <li style="background:var(--color-green-200)">--color-green-200</li>
+                                            <li style="background:var(--color-green-300)">--color-green-300</li>
+                                            <li style="background:var(--color-blue-100); color: var(--color-wh)">--color-blue-100</li>
+                                            <li style="background:var(--color-gray-100); color: var(--color-wh)">--color-gray-100</li>
+                                            <li style="background:var(--color-gray-200); color: var(--color-wh)">--color-gray-200</li>
+                                            <li style="background:var(--color-gray-300)">--color-gray-300</li>
+                                            <li style="background:var(--color-gray-400)">--color-gray-400</li>
+                                            <li style="background:var(--color-gray-500)">--color-gray-500</li>
+                                            <li style="background:var(--color-gray-600)">--color-gray-600</li>
+                                            <li style="background:var(--color-wh)">--color-wh</li>
+                                            <li style="background:var(--color-error)">--color-error</li>
+                                            <li class="mt-8">* 병의원 구분 컬러값</li>
+                                            <li style="background:var(--color-aqua); color: var(--color-wh)">--color-aqua</li>
+                                            <li style="background:var(--color-blue-200); color: var(--color-wh)">--color-blue-200</li>
+                                            <li style="background:var(--color-violet); color: var(--color-wh)">--color-violet</li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <div class="g-card active">
+                                            <pre><code class="css">--color-yellow-100: #ffe017;     // primary
+--color-yellow-200: #fef9b6;
+--color-yellow-300: #fefbe3;
+--color-green-100: #00a35f;      // secondary
+--color-green-200: #12bd7e;
+--color-green-300: #ddf3e9;
+--color-blue-100: #3881f3;
+--color-gray-100: #222;          // default color
+--color-gray-200: #717171;
+--color-gray-300: #b1b1b1;
+--color-gray-400: #dfdfdf;
+--color-gray-500: #efefef;
+--color-gray-600: #f5f5f5;
+--color-wh: #fff;
+--color-error: #e85257;
+// 병의원 구분 컬러값
+--color-aqua: #4fc0b9;
+--color-blue-200: #5778aa;
+--color-violet: #9b69ad;</code></pre>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">$bg_url</th>
+                                    <td>"../images/"</td>
+                                    <td>
+                                        <div class="g-card active">
+                                            <pre><code class="html"></code></pre>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">$vh100</th>
+                                    <td>calc(var(--vh, 1vh) * 100)</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">@include min-height100</th>
+                                    <td>AOS/iOS 각각의 min-height 적용</td>
+                                    <td>
+                                        <div class="g-card active">
+                                            <pre><code class="css">@mixin min-height100 {
+    min-height: $vh100;
+    @supports (-webkit-touch-callout: none) {
+        min-height: 100vh;
+    }
+}</code></pre>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">@include height100</th>
+                                    <td>AOS/iOS 각각의 height 적용</td>
+                                    <td>
+                                        <div class="g-card active">
+                                            <pre><code class="css">@mixin height100 {
+    height: $vh100;
+    @supports (-webkit-touch-callout: none) {
+        height: 100vh;
+    }
+}</code></pre>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">@include blind</th>
+                                    <td>IR처리</td>
+                                    <td>
+                                        <div class="g-card active">
+                                            <pre><code class="css"></code></pre>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">safe-area</th>
+                                    <td>safe(방향, 추가 여백)</td>
+                                    <td>
+                                        <div class="g-card active">
+                                            <pre><code class="css">예) padding-bottom: safe(bottom, 106px);</code></pre>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">.blind</th>
+                                    <td>(공용) 감추기 클래스</td>
+                                    <td>
+                                        <div class="g-card active">
+                                            <pre><code class="css">.blind {
+    overflow: hidden; 
+    position: absolute; 
+    clip: rect(0 0 0 0); 
+    margin: -1px; 
+    width: 1px; 
+    height: 1px; 
+    color: transparent;
+}</code></pre>
+                                        </div>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section class="g-section" id="button">
+                    <header class="g-section-header">
+                        <h3 class="section-title">Button</h3>
+                        <ul class="g-desc">
+                            <li>- Default class .btn</li>
+                            <li>- button, a tag available</li>
+                        </ul>
+                    </header>
+
+                    <div class="g-table">
+                        <table>
+                            <colgroup>
+                                <col style="width:150px;">
+                                <col style="width:300px;">
+                                <col style="width:auto;">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="col" colspan="3"><strong>type</strong></th>
+                                </tr>
+                                <tr>
+                                    <th scope="row">page-prev</th>
+                                    <td>
+                                        <button type="button" class="btn page-prev"></button>
+                                    </td>
+                                    <td>
+                                        <div class="g-card active">
+                                            <pre><code class="html">&lt;button type="button" class="btn page-prev"&gt;&lt;/button&gt;</code></pre>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">green-rect</th>
+                                    <td>
+                                        <button type="button" class="btn green-rect">green-rect</button>
+                                    </td>
+                                    <td>
+                                        <div class="g-card active">
+                                            <pre><code class="html">&lt;button type="button" class="btn green-rect"&gt;green-rect&lt;/button&gt;</code></pre>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">yellow-rect</th>
+                                    <td>
+                                        <button type="button" class="btn yellow-rect">yellow-rect</button>
+                                    </td>
+                                    <td>
+                                        <div class="g-card active">
+                                            <pre><code class="html">&lt;button type="button" class="btn yellow-rect"&gt;yellow-rect&lt;/button&gt;</code></pre>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">yellow-rect disabled</th>
+                                    <td>
+                                        <button type="button" class="btn yellow-rect disabled">disabled</button>
+                                    </td>
+                                    <td>
+                                        <div class="g-card active">
+                                            <pre><code class="html">&lt;button type="button" class="btn yellow-rect disabled"&gt;disabled&lt;/button&gt;</code></pre>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            
+                        </table>
+                    </div>
+                </section>
+
+                <section class="g-section" id="text">
+                    <header class="g-section-header">
+                        <h3 class="section-title">Text</h3>
+                    </header>
+                    <div class="g-table">
+                        <table>
+                            <colgroup>
+                                <col style="width:150px;">
+                                <col style="width:300px;">
+                                <col style="width:auto;">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">head-title</th>
+                                    <td><h2 class="head-title">head-title</h2></td>
+                                    <td>
+                                        <div class="g-card active">
+                                            <pre><code class="html">&lt;h2 class="head-title"&gt;head-title&lt;/h2&gt;</code></pre>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">desc-title</th>
+                                    <td><h2 class="desc-title">desc-title</h2></td>
+                                    <td>
+                                        <div class="g-card active">
+                                            <pre><code class="html">&lt;h2 class="desc-title"&gt;desc-title&lt;/h2&gt;</code></pre>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">info-title</th>
+                                    <td><h2 class="info-title">info-title</h2></td>
+                                    <td>
+                                        <div class="g-card active">
+                                            <pre><code class="html">&lt;h2 class="info-title"&gt;info-title&lt;/h2&gt;</code></pre>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">area-title</th>
+                                    <td><h2 class="area-title">area-title</h2></td>
+                                    <td>
+                                        <div class="g-card active">
+                                            <pre><code class="html">&lt;h2 class="area-title"&gt;area-title&lt;/h2&gt;</code></pre>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">pop-title</th>
+                                    <td><h2 class="pop-title">pop-title</h2></td>
+                                    <td>
+                                        <div class="g-card active">
+                                            <pre><code class="html">&lt;h2 class="pop-title"&gt;pop-title&lt;/h2&gt;</code></pre>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">data-title</th>
+                                    <td><h2 class="data-title">data-title</h2></td>
+                                    <td>
+                                        <div class="g-card active">
+                                            <pre><code class="html">&lt;h2 class="data-title"&gt;data-title&lt;/h2&gt;</code></pre>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">agree-title</th>
+                                    <td><h2 class="agree-title">agree-title</h2></td>
+                                    <td>
+                                        <div class="g-card active">
+                                            <pre><code class="html">&lt;h2 class="agree-title"&gt;agree-title&lt;/h2&gt;</code></pre>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+            </main> 
+        </div>
+
+    </div>
+
+    <!-- 열고 싶다면 class  show 추가 -->
+    <div class="layer" id="layerAlert">
+        <div class="layer-container">
+            <header class="layer-header">
+                <h2>layer title</h2>
+                <button type="button" class="btn-icon close e-close" title="닫기"></button>
+            </header>
+            <div class="layer-contents">
+                <p>message</p>
+            </div>
+            <footer class="layer-footer">
+                <button type="button" class="btn btn-normal e-close">close</button>
+                <button type="button" class="btn btn-primary">confirm</button>
+            </footer>
+        </div>
+        <!-- <div class="dimmed"></div> -->
+    </div>
+
+
+    <script src="./resources/js/ui.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            toggleAccordion();
+
+            snbRender();
+
+            snbActiveScroll();
+
+            window.addEventListener('scroll', function(e) {
+                let scrollTop = window.pageYOffset;
+                let menuSection = document.querySelectorAll('.g-section');
+                let menuLI = document.querySelectorAll('#menu li');
+                let scrollEl = document.querySelector('body');
+
+                let scrollBottom = (node) => {
+                    node.scrollTop = node.scrollHeight;
+                }
+
+                scrollBottom(scrollEl);
+
+                menuSection.forEach( function(menuSec, index) { 
+                    let targetTop = menuSec.offsetTop - 200; 
+
+                    if ( targetTop <= scrollTop ) { 
+                        [].map.call(menuLI, item => {
+                            item.classList.remove('active');
+                        });
+                        menuLI[index].classList.add('active'); 
+                    } else if(scrollTop <= 52) {
+                        [].map.call(menuLI, item => {
+                            item.classList.remove('active');
+                        });
+                        menuLI[0].classList.add('active');
+                    } else if(scrollBottom <= 300) {
+                        [].map.call(menuLI, item => {
+                            item.classList.remove('active');
+                        });
+                        menuLI[menuLi.length - 1].classList.add('active');
+                    }
+                });
+            });
+        });
+
+        // SNB menu
+        function snbRender() {
+            let menuParent = document.getElementById('menu');
+            let menuSection = document.querySelectorAll('.g-section');
+
+            menuSection.forEach( function(menu) {
+                let menuId = menu.getAttribute('id');
+                let li = document.createElement('li');
+                let title = menu.querySelector('.g-section-header .section-title');
+                
+                li.innerHTML = '<a href="#' + menuId + '">' + title.innerHTML + '</a>';
+                menuParent.appendChild(li);
+            });
+        }
+        function snbActiveScroll() {
+            let _menus = document.querySelectorAll('#menu a');
+            let _target, _targetMenu, offsetY;
+
+            if(_menus !== null) {
+                [].map.call( _menus, item => {
+                    item.addEventListener('click', (event) => {
+                        event.preventDefault();
+
+                        _target = event.currentTarget;
+                        _targetMenu = document.querySelector(_target.getAttribute('href'));
+                        offsetY = _targetMenu.offsetTop - 60;
+                        offsetY = _targetMenu.offsetTop - 60;
+
+                        window.scrollTo(0, offsetY);
+                    });
+                } );
+            }
+        };
+
+        // 아코디언
+        function toggleAccordion() {
+            const _accToggles = document.querySelectorAll('.g-card .g-card-header');
+            let _target, _targetContents, _list;
+
+            if(_accToggles !== null) {
+                [].map.call( _accToggles, toggle => {
+                    toggle.addEventListener('click', (event) => {
+                        event.preventDefault();
+                        _target = event.currentTarget;
+                        _targetContents = _target.closest('.g-card');
+
+                        if(_targetContents.classList.contains('active')) {
+                            _targetContents.classList.remove('active');
+                        } else {
+                            _targetContents.classList.add('active');
+                        }
+                    });
+                } );
+            }
+        }
+
+    </script>
+  </body>
+</html>

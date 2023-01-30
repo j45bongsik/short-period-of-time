@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="../favicon.ico">
+  <title>web-view</title>
+  <script defer src="../js/main.js"></script>
+  <link href="../css/main.css" rel="stylesheet">
+</head>
+<body>
+<noscript>
+  <strong>We're sorry but web-view doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+</noscript>
+<div id="app"></div>
+<script defer src="../sample/common.js"></script>
+<script defer src="../sample/survey.js"></script>
+<script>
+    let apiType;
+    let apiReferenceType;
+    let userKey;
+
+    document.addEventListener("DOMContentLoaded", () => {
+        // 샘플 script 파일은 [./sample/*.js]를 참고 하세요
+        initAsync()
+        .then(() => {
+            init();
+            run();
+        });
+    });
+
+    function init() {
+        apiType = model.apiType;
+        apiReferenceType = model.apiReferenceType;
+        userKey = model.userKey;
+    }
+
+    function run() {
+        const options = {
+            endpointApi: {
+                apiType: apiType,
+                apiReferenceType: apiReferenceType,
+                userKey: userKey,
+            },
+        };
+        window.wv = new Mediage.WebView("#app", options);
+        // wv.alert("TEST", "<i style='font-size: 20px;'>웹뷰 테스트</i>");
+    }
+</script>
+</body>
+</html>

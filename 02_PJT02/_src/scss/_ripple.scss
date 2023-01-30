@@ -1,0 +1,41 @@
+// ripple
+.btn,
+.f-btn label,
+.f-image .btn-add,
+.doctor-list .item,
+.inquiry-list .item,
+.terms-list a,
+.alert-list .item,
+.layer-add-image .pick-method .one,
+.c-accordion .acc-header,
+.one-click a,
+.p-setting .locale,
+.locale-list .f-radio {
+    --ripple-background: #222;
+    --ripple-opacity: 0.1;
+    --ripple-duration: 500ms;
+    position: relative;
+    overflow: hidden;
+    -webkit-tap-highlight-color: transparent;
+
+    &::before {
+        content: '';
+        position:absolute;
+        display: block;
+        background: var(--ripple-background, #fff);
+        border-radius: 50%;
+        pointer-events: none; 
+        
+        //  position and size 
+        top: calc(var(--y) * 1px);
+        left: calc(var(--x) * 1px);
+        width:  calc(var(--d) * 1px);
+        height: calc(var(--d) * 1px);
+
+        //  animated properties
+        opacity: calc(var(--o, 1) * var(--ripple-opacity, 0.3));
+        transition: calc(var(--t, 0) * var(--ripple-duration, 600ms)) var(--ripple-easing,linear);
+        transform: translate(-50%, -50%) scale(var(--s, 1));
+        transform-origin: center;
+    }
+}

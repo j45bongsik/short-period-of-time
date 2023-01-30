@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="56.833" height="49.278">
+    <defs>
+        <style>
+            .cls-2{fill:none;stroke:#222;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.5px}
+        </style>
+    </defs>
+    <g id="heartA" transform="translate(1.25 1.25)" style="opacity:.05">
+        <g id="그룹_1189" data-name="그룹 1189">
+            <path id="패스_913" data-name="패스 913" class="cls-2" d="M879.03 1028.366A13.068 13.068 0 0 0 865.686 1015a13.33 13.33 0 0 0-12.171 8.39 13.323 13.323 0 0 0-12.171-8.39A13.07 13.07 0 0 0 828 1028.366a20.84 20.84 0 0 0 3.338 10.024c6.91 10.775 20.491 23.389 22.178 23.389 1.94 0 15.188-12.684 21.786-23.389a30.4 30.4 0 0 0 3.728-10.024z" transform="translate(-828 -1015)"/>
+        </g>
+        <path id="패스_914" data-name="패스 914" class="cls-2" d="M883.844 1043.655h-19.908l-8.588 9.96-12.279-19.938-2.283 8.025h-7.6" transform="translate(-829.511 -1020.439)"/>
+    </g>
+</svg>

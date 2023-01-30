@@ -1,0 +1,158 @@
+$bg_url: "../images/";
+
+:root {
+    --font-device: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Helvetica Neue", 'Malgun Gothic','맑은 고딕', Arial, sans-serif;
+    --font-default: "Pretendard", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Helvetica Neue", 'Malgun Gothic','맑은 고딕', Arial, sans-serif;
+
+    --color-yellow-100: #ffe017;     // primary
+    --color-yellow-200: #fef9b6;
+    --color-yellow-300: #fefbe3;
+    --color-green-100: #00a35f;      // secondary
+    --color-green-200: #12bd7e;
+    --color-green-300: #ddf3e9;
+    --color-blue-100: #3881f3;
+    --color-gray-100: #222;          // default color
+    --color-gray-200: #717171;
+    --color-gray-300: #b1b1b1;
+    --color-gray-400: #dfdfdf;
+    --color-gray-500: #efefef;
+    --color-gray-600: #f5f5f5;
+    --color-wh: #fff;
+    --color-error: #e85257;
+    --color-bk: #000;
+    // 병의원 구분 컬러값
+    --color-aqua: #4fc0b9;
+    --color-blue-200: #5778aa;
+    --color-violet: #9b69ad;
+
+}
+// opacity용
+$color-gray-100: #222;
+$color-gray-600: #f5f5f5;
+$color-error: #e85257;
+$color-green-300: #ddf3e9;
+
+@mixin font-size($sizeValue: 14) {
+    font-size: #{$sizeValue}px;
+    font-size: calc(#{$sizeValue}rem / 14);
+}
+
+// 하단 버튼 사이즈
+$btn-height: calc(92px + 14px);
+
+// device height
+$vh100: calc(var(--vh, 1vh) * 100);
+
+@mixin min-height100 {
+    min-height: $vh100;
+    @supports (-webkit-touch-callout: none) {
+        min-height: 100vh;
+    }
+}
+
+@mixin height100 {
+    height: $vh100;
+    @supports (-webkit-touch-callout: none) {
+        height: 100vh;
+    }
+}
+
+// 여백
+$spacer-row: 24px;
+$spacer: 0, 8, 10, 16, 20, 24, 32, 40;
+@each $num in $spacer {
+    #wrap .mt-#{$num},
+    .layer .mt-#{$num} {
+        margin-top: #{$num}px;
+    }
+}
+@each $num in $spacer {
+    #wrap .mb-#{$num},
+    .layer .mb-#{$num} {
+        margin-bottom: #{$num}px;
+    }
+}
+@each $num in $spacer {
+    #wrap .mr-#{$num},
+    .layer .mr-#{$num} {
+        margin-right: #{$num}px;
+    }
+}
+@each $num in $spacer {
+    #wrap .pt-#{$num},
+    .layer .pt-#{$num} {
+        padding-top: #{$num}px;
+    }
+}
+@each $num in $spacer {
+    #wrap .pb-#{$num},
+    .layer .pb-#{$num} {
+        padding-bottom: #{$num}px;
+    }
+}
+
+@mixin blind() {
+    overflow: hidden; 
+    position: absolute; 
+    clip: rect(0 0 0 0); 
+    margin: -1px; 
+    width: 1px; 
+    height: 1px; 
+    color: transparent;
+}
+
+// 하단 버튼 고정
+@mixin fixed-bottom() {
+    padding-bottom: #{$btn-height};
+    padding-bottom: safe(bottom, 106px); 
+    // input에 포커스 && 키보드 열렸을 때
+    .is-focused & {
+        padding-bottom: 0;
+        padding-bottom: safe(bottom);
+    }
+}
+
+// 노치대응
+// 테스트용 safe area 변수 (값이 0일때는 0% 또는 0px 사용)
+// $safeAreaMap: ("top": 44px, "right": 0%, "bottom": 34px, "left": 0%);
+$safeAreaMap: (
+    "top": env(safe-area-inset-top), 
+    "right": env(safe-area-inset-right),
+    "bottom": env(safe-area-inset-bottom), 
+    "left": env(safe-area-inset-left)
+);
+
+$safe-top: map-get($safeAreaMap,"top");
+$safe-right: map-get($safeAreaMap,"right");
+$safe-bottom: map-get($safeAreaMap,"bottom");
+$safe-left: map-get($safeAreaMap,"left");
+
+/**
+ * safe-area-inset 처리
+ * $dir - 방향(all, top, right, bottom, left, 생략가능)
+ * $value - 더해질 값(생략가능)
+ */
+@function safe($dir: all, $value: 0) {
+	@if ($dir == all) {
+		@if ($value > 0) {
+			@return calc(#{$value} + #{map-get($safeAreaMap,"top")}) calc(#{$value} + #{map-get($safeAreaMap,"right")}) calc(#{$value} + #{map-get($safeAreaMap,"bottom")}) calc(#{$value} + #{map-get($safeAreaMap,"left")});
+		}
+		@else if ($value < 0) {
+			@return calc((#{-$value} + #{map-get($safeAreaMap,"top")}) * -1) calc((#{-$value} + #{map-get($safeAreaMap,"right")}) * -1) calc((#{-$value} + #{map-get($safeAreaMap,"bottom")}) * -1) calc((#{-$value} + #{map-get($safeAreaMap,"left")}) * -1);
+		}
+		@else {
+			@return map-get($safeAreaMap,"top") map-get($safeAreaMap,"right") map-get($safeAreaMap,"bottom") map-get($safeAreaMap,"left");
+		}
+	}
+	@else {
+		@if ($value > 0) {
+			@return calc(#{$value} + #{map-get($safeAreaMap,$dir)});
+		}
+		@else if ($value< 0) {
+			@return calc((#{-$value} + #{map-get($safeAreaMap,$dir)}) * -1);
+		}
+		@else {
+			@return map-get($safeAreaMap,$dir);
+		}
+	}
+}
